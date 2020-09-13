@@ -26,18 +26,12 @@
     \fancyfoot[c]{\thepage}
 }
 
-\def\head{
-    \@ifundefined{duetime} {
-        \@ifundefined{duedate} {
-            \textbf{\course: \@title}
-        }{
-            \textbf{\course: \@title\\Due on \duedate}
-        }
-    }{
-        \@ifundefined{timezone} {
-            \textbf{\course: \@title\\Due at \duetime\ on \duedate}
-        }{
-            \textbf{\course: \@title\\Due at \duetime\ \timezone\ on \duedate}
-        }
-    }
+\def\inserthead{
+    \@ifundefined{course}{\def\iheada}{\def\iheada{\course: }}
+    \@ifundefined{title}{\def\iheadb{\def\iheada}}{\def\iheadb{\iheada\@title\ }}
+    \@ifundefined{duetime}{\def\iheadc{\def\iheadb}}{\def\iheadc{\iheadb Due at \duetime\ }}
+    \@ifundefined{timezone}{\def\iheadd{\def\iheadc}}{\def\iheadd{\iheadc \timezone\ }}
+    \@ifundefined{duetime}{\def\iheade{\def\iheadd}}{\def\iheade{\iheadd on \duedate}}
+    \@ifundefined{description}{\def\iheadf{\def\iheade}}{\def\iheadf{\iheade\\\description}}
+    \textbf{\iheadf}
 }
