@@ -1,4 +1,4 @@
-# LaTeX formatting for Math/Physics Schoolwork
+# LaTeX formatting for STEM Schoolwork
 Overleaf settings:
 - Compiler: PDFLatex
 - TeX Live version: 2019 (latest)
