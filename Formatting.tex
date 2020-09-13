@@ -26,6 +26,13 @@
     \fancyfoot[c]{\thepage}
 }
 
+\def\env@cases{%
+  \let\@ifnextchar\new@ifnextchar
+  \left\lbrace
+  \def\arraystretch{1.2}
+  \array{l@{\quad}l@{}}
+}
+
 \def\inserthead{
     \@ifundefined{course}{\def\iheada{}}{\def\iheada{\course: }}
     \@ifundefined{title}{\def\iheadb{\iheada}}{\def\iheadb{\iheada\@title\ }}
