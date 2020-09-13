@@ -1,5 +1,6 @@
-\usepackage{amsfonts,amssymb,enumerate,fancyhdr}
+\usepackage{amsfonts,amssymb,fancyhdr}
 \usepackage[fleqn]{amsmath}
+\usepackage[shortlabels]{enumitem}
 
 \renewcommand{\familydefault}{\sfdefault}
 \headheight 13.6pt
@@ -32,6 +33,6 @@
     \@ifundefined{duetime}{\def\iheadc{\iheadb}}{\def\iheadc{\iheadb Due at \duetime\ }}
     \@ifundefined{timezone}{\def\iheadd{\iheadc}}{\def\iheadd{\iheadc \timezone\ }}
     \@ifundefined{duetime}{\def\iheade{\iheadd}}{\def\iheade{\iheadd on \duedate}}
-    \@ifundefined{description}{\def\iheadf{\iheade}}{\def\iheadf{\iheade\\\description}}
+    \@ifundefined{desc}{\def\iheadf{\iheade}}{\def\iheadf{\iheade\\\desc}}
     \textbf{\iheadf}
 }
