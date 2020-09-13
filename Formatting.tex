@@ -1,0 +1,43 @@
+\usepackage{amsfonts,amssymb,enumerate,fancyhdr}
+\usepackage[fleqn]{amsmath}
+
+\renewcommand{\familydefault}{\sfdefault}
+\headheight 13.6pt
+\setlength{\headsep}{10pt}
+\textwidth 15cm 
+\textheight 24.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+\fontdimen2\font=3pt
+\frenchspacing
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[c]{\thepage}
+\makeatletter
+\lhead{\course: \@title}
+\rhead{\@author}
+
+\fancypagestyle{firstpage}{
+    \fancyhf{}
+    \rhead{\@author}
+    \fancyfoot[c]{\thepage}
+}
+
+\def\title{
+    \@ifundefined{duetime} {
+        \@ifundefined{duedate} {
+            \textbf{\course: \@title}
+        }{
+            \textbf{\course: \@title\\Due on \duedate}
+        }
+    }{
+        \@ifundefined{duedate} {
+            \textbf{\course: \@title\\Due at \duetime\ on \duedate}
+        }{
+            \textbf{\course: \@title\\Due at \duetime\ \timezone\ on \duedate}
+        }
+    }
+}
