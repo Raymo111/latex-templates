@@ -36,7 +36,7 @@
 \def\inserthead{
     \def\ihead{}
     \@ifundefined{course}{}{\g@addto@macro\ihead{\course: }}
-    \@ifundefined{title}{}{\g@addto@macro\ihead{\@title\ }}
+    \@ifundefined{title}{}{\g@addto@macro\ihead{\@title\\}}
     \@ifundefined{duetime}{}{\g@addto@macro\ihead{Due at \duetime\ }}
     \@ifundefined{timezone}{}{\g@addto@macro\ihead{\timezone\ }}
     \@ifundefined{duetime}{}{\g@addto@macro\ihead{on \duedate}}
