@@ -34,11 +34,14 @@
 }
 
 \def\inserthead{
-    \@ifundefined{course}{\def\iheada{}}{\def\iheada{\course: }}
-    \@ifundefined{title}{\def\iheadb{\iheada}}{\def\iheadb{\iheada\@title\ }}
-    \@ifundefined{duetime}{\def\iheadc{\iheadb}}{\def\iheadc{\iheadb Due at \duetime\ }}
-    \@ifundefined{timezone}{\def\iheadd{\iheadc}}{\def\iheadd{\iheadc \timezone\ }}
-    \@ifundefined{duetime}{\def\iheade{\iheadd}}{\def\iheade{\iheadd on \duedate}}
-    \@ifundefined{desc}{\def\iheadf{\iheade}}{\def\iheadf{\iheade\\\desc}}
-    \textbf{\iheadf}
+    \def\ihead{}
+    \@ifundefined{course}{}{\g@addto@macro\ihead{\course: }}
+    \@ifundefined{title}{}{\g@addto@macro\ihead{\@title\ }}
+    \@ifundefined{duetime}{}{\g@addto@macro\ihead{Due at \duetime\ }}
+    \@ifundefined{timezone}{}{\g@addto@macro\ihead{\timezone\ }}
+    \@ifundefined{duetime}{}{\g@addto@macro\ihead{\duedate}}
+    \@ifundefined{desc}{}{\g@addto@macro\ihead{\\\desc}}
+    \textbf{\ihead}
 }
+
+\makeatother
