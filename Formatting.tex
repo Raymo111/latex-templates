@@ -3,22 +3,30 @@
 \renewcommand{\familydefault}{\sfdefault}
 \headheight 13.6pt
 \setlength{\headsep}{10pt}
-\setlength{\mathindent}{0pt}
 \textwidth 15cm 
 \textheight 23cm
 \evensidemargin 6mm
 \oddsidemargin 6mm
 \topmargin -1.1cm
 \setlength{\parskip}{1.5ex}
+\setlength\parindent{0pt}
 \fontdimen2\font 3pt
 \righthyphenmin 62
 \lefthyphenmin 62
 \frenchspacing
-
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot[c]{\thepage}
+\definecolor{fuchsia}{HTML}{bd5a9b}
+
 \makeatletter
+
+\g@addto@macro\normalsize{%
+  \setlength\abovedisplayskip{5pt}
+  \setlength\belowdisplayskip{5pt}
+  \setlength\abovedisplayshortskip{2pt}
+  \setlength\belowdisplayshortskip{2pt}
+}
 \lhead{\course: \@title}
 \rhead{\@author}
 
@@ -36,6 +44,7 @@
 }
 
 \def\inserthead{
+    \thispagestyle{firstpage}
     \def\ihead{}
     \@ifundefined{course}{}{\g@addto@macro\ihead{\course: }}
     \@ifundefined{title}{}{\g@addto@macro\ihead{\@title\\}}
@@ -45,7 +54,5 @@
     \@ifundefined{desc}{}{\g@addto@macro\ihead{\\\desc}}
     \textbf{\ihead}
 }
-
-\definecolor{fuchsia}{HTML}{bd5a9b}
 
 \makeatother
