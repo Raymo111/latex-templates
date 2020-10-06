@@ -19,6 +19,12 @@
 \fancyfoot[c]{\thepage}
 \definecolor{fuchsia}{HTML}{bd5a9b}
 
+\newenvironment{pcase}{ 
+	\begin{enumerate}[\textbf{Case \arabic*:},leftmargin=3.9em]
+}{
+	\end{enumerate}
+}
+
 \makeatletter
 
 \g@addto@macro\normalsize{%

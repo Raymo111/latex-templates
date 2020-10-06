@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
-\usepackage[fleqn]{amsmath}
-\usepackage{amssymb,nccmath,mathtools}
+\usepackage{amsmath,amssymb,nccmath,mathtools,amsthm}
+\usepackage[table,xcdraw]{xcolor}
 \usepackage[shortlabels]{enumitem}
 
 \author{Yourname}
@@ -37,9 +37,11 @@
 
 \begin{enumerate}[(a)]
     \item 
-        \begin{enumerate}[label=\textbf{Case \arabic*:}, wide=0pt, leftmargin=*]
-            \item 
-        \end{enumerate}
+        \begin{proof}
+            \begin{pcase}
+                \item 
+            \end{pcase}
+        \end{proof}
 \end{enumerate}
 
 \end{document}
