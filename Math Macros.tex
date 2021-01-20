@@ -1,10 +1,61 @@
-\def\inn{\in\mathbb{N}}
-\def\inr{\in\mathbb{R}}
-\def\inz{\in\mathbb{Z}}
-\def\inq{\in\mathbb{Q}}
-\def\nin{\not\in}
-\def\ninn{\not\in\mathbb{N}}
-\def\ninr{\not\in\mathbb{R}}
-\def\ninz{\not\in\mathbb{Z}}
-\def\ninq{\not\in\mathbb{Q}}
-\def\hl{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}}
+% Math Macros for LaTeX
+% Author: Raymond Li <latex@raymond.li>
+% GPLv3 on GitHub (https://github.com/Raymo111/latex-templates)
+% Usage: Name this file Math Macros.tex and place it in the same directory as your
+%        other LaTeX files, and use \input{Math Macros} before \begin{document}
+
+% Necessary packages to import for this file - mathtools imports amsmath
+\usepackage{mathtools, xspace}
+
+% The Natural, Real, Integer, Rational, and Complex domains, respectively
+\newcommand\inn{\ensuremath{\in\mathbb{N}}\xspace}
+\newcommand\inr{\ensuremath{\in\mathbb{R}}\xspace}
+\newcommand\inz{\ensuremath{\in\mathbb{Z}}\xspace}
+\newcommand\inq{\ensuremath{\in\mathbb{Q}}\xspace}
+\newcommand\inc{\ensuremath{\in\mathbb{C}}\xspace}
+
+% The negation of the above, and a plain "not in"
+\newcommand\nin{\ensuremath{\not\in}\xspace}
+\newcommand\ninn{\ensuremath{\not\in\mathbb{N}}\xspace}
+\newcommand\ninr{\ensuremath{\not\in\mathbb{R}}\xspace}
+\newcommand\ninz{\ensuremath{\not\in\mathbb{Z}}\xspace}
+\newcommand\ninq{\ensuremath{\not\in\mathbb{Q}}\xspace}
+\newcommand\ninc{\ensuremath{\in\mathbb{C}}\xspace}
+
+% Horizontal line helpful for dividing question from solution
+\newcommand\hl{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}}
+
+% Vector dot product bullet
+\newcommand\vdot{\ensuremath{\bullet}\xspace}
+
+% u, v and w vectors, respectively
+\renewcommand\u{\ensuremath{\mathbf u}\xspace}
+\renewcommand\v{\ensuremath{\mathbf v}\xspace}
+\newcommand\w{\ensuremath{\mathbf w}\xspace}
+
+% Norm (length), projection, and Standard Inner Product, respectively
+\newcommand{\norm}[1]{\ensuremath{\left\|#1\right\|}\xspace}
+\newcommand{\proj}[2]{\ensuremath{\operatorname{Proj}_{#2} #1}\xspace}
+\newcommand{\sip}[1]{\ensuremath{\left\langle{#1}\right\rangle}\xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Credit must be given to @campa and @egreg for the following code:
+% Source: https://tex.stackexchange.com/questions/579453
+% Vertical representation of vector that varies in size based on
+%   inline or display mode math environments
+\makeatletter
+\newcommand*{\ve}[1]{%
+  \begingroup
+  \if@display
+      \def\@env{{pmatrix}}
+  \else
+      \def\@env{{psmallmatrix}}
+  \fi
+  \expandafter\begin\@env
+  \@ve#1,\relax,
+  \expandafter\end\@env
+  \endgroup
+}
+\def\@ve#1,{\ifx#1\relax\else#1\\\expandafter\@ve\fi}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
