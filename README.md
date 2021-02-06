@@ -17,4 +17,3 @@ Overleaf settings:
     - Auto-recompile: On
     - Compile Mode: Normal (I'm scared of using draft and there's not much latency reduction for my usage)
     - Check Syntax: On
-Why would you change the last two?

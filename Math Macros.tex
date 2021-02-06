@@ -1,10 +1,77 @@
-\def\inn{\in\mathbb{N}}
-\def\inr{\in\mathbb{R}}
-\def\inz{\in\mathbb{Z}}
-\def\inq{\in\mathbb{Q}}
-\def\nin{\not\in}
-\def\ninn{\not\in\mathbb{N}}
-\def\ninr{\not\in\mathbb{R}}
-\def\ninz{\not\in\mathbb{Z}}
-\def\ninq{\not\in\mathbb{Q}}
-\def\hl{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}}
+% Math Macros for LaTeX
+% Author: Raymond Li <latex@raymond.li>
+% GPLv3 on GitHub (https://github.com/Raymo111/latex-templates)
+% Usage: Name this file Math Macros.tex and place it in the same directory as your
+%        other LaTeX files, and use \input{Math Macros} before \begin{document}
+
+% Necessary packages to import for this file - mathtools imports amsmath
+\usepackage{mathtools, xspace}
+
+% In the Natural, Real, Integer, Rational, Complex domains, and Field, respectively
+\newcommand\inn{\ensuremath{\in\mathbb{N}}\xspace}
+\newcommand\inr{\ensuremath{\in\mathbb{R}}\xspace}
+\newcommand\inz{\ensuremath{\in\mathbb{Z}}\xspace}
+\newcommand\inq{\ensuremath{\in\mathbb{Q}}\xspace}
+\newcommand\inc{\ensuremath{\in\mathbb{C}}\xspace}
+\newcommand\inF{\ensuremath{\in\mathbb{F}}\xspace}
+
+% The above macros, without in
+\newcommand\N{\ensuremath{\mathbb{N}}\xspace}
+\newcommand\R{\ensuremath{\mathbb{R}}\xspace}
+\newcommand\Z{\ensuremath{\mathbb{Z}}\xspace}
+\newcommand\Q{\ensuremath{\mathbb{Q}}\xspace}
+\newcommand\C{\ensuremath{\mathbb{C}}\xspace}
+\newcommand\F{\ensuremath{\mathbb{F}}\xspace}
+
+% The negation of the above, and a plain "not in"
+\newcommand\nin{\ensuremath{\not\in}\xspace}
+\newcommand\ninn{\ensuremath{\not\in\mathbb{N}}\xspace}
+\newcommand\ninr{\ensuremath{\not\in\mathbb{R}}\xspace}
+\newcommand\ninz{\ensuremath{\not\in\mathbb{Z}}\xspace}
+\newcommand\ninq{\ensuremath{\not\in\mathbb{Q}}\xspace}
+\newcommand\ninc{\ensuremath{\in\mathbb{C}}\xspace}
+
+% Nonzero (set notation)
+\newcommand\nonzero{\ensuremath{\setminus\{0\}}\xspace}
+
+% Horizontal line helpful for dividing question from solution
+\newcommand\hl{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}}
+
+% Vector dot product bullet
+\newcommand\vdot{\ensuremath{\bullet}\xspace}
+
+% u, v, w, z, n and zero vectors, respectively
+\renewcommand\u{\ensuremath{\Vec{u}}\xspace}
+\renewcommand\v{\ensuremath{\Vec{v}}\xspace}
+\newcommand\w{\ensuremath{\Vec{w}}\xspace}
+\newcommand\z{\ensuremath{\Vec{z}}\xspace}
+\newcommand\n{\ensuremath{\Vec{n}}\xspace}
+\newcommand\0{\ensuremath{\Vec{0}}\xspace}
+
+% Norm (length), projection, Standard Inner Product and span, respectively
+\newcommand{\norm}[1]{\ensuremath{\left\|#1\right\|}\xspace}
+\newcommand{\proj}[2]{\ensuremath{\operatorname{Proj}_{#2}\left(#1\right)}\xspace}
+\newcommand{\sip}[1]{\ensuremath{\left\langle{#1}\right\rangle}\xspace}
+\newcommand{\spa}[1]{\ensuremath{\operatorname{Span}\left(\{#1\}\right)}\xspace} % span throws all sorts of errors
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Credit must be given to @campa and @egreg for the following code:
+% Source: https://tex.stackexchange.com/questions/579453
+% Vertical representation of vector that varies in size based on
+%   inline or display mode math environments
+\makeatletter
+\newcommand*{\ve}[1]{%
+    \begingroup
+    \if@display
+      \def\@tempa{{pmatrix}}
+    \else
+      \def\@tempa{{psmallmatrix}}
+    \fi
+    \expandafter\begin\@tempa
+    \@ve#1,\@@nil,
+    \expandafter\end\@tempa
+    \endgroup
+}
+\def\@ve#1,{\ifx\@@nil#1\else#1\\\expandafter\@ve\fi}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
