@@ -1,19 +1,32 @@
+% Formatting for LaTeX
+% Author: Raymond Li <latex@raymond.li>
+% License: Creative Commons Attribution 4.0 International
+% GitHub repository: (https://github.com/Raymo111/latex-templates)
+% Usage: Name this file Formatting.tex and place it in the same directory as your
+%        other LaTeX files, and use \input{Formatting} before \begin{document}
+
+% Necessary packages to import for this file - math fonts, fancy header/footer and color
 \usepackage{amsfonts,fancyhdr,xcolor}
 
-\renewcommand{\familydefault}{\sfdefault}
+% See https://www.overleaf.com/learn/latex/page_size_and_margins
 \headheight 13.6pt
 \setlength{\headsep}{10pt}
-\textwidth 15cm 
+\textwidth 15cm
 \textheight 23cm
 \evensidemargin 6mm
 \oddsidemargin 6mm
 \topmargin -1.1cm
+
+% See https://www.overleaf.com/learn/latex/Paragraph_formatting
 \setlength{\parskip}{1.5ex}
 \setlength\parindent{0pt}
 \fontdimen2\font 3pt
 \righthyphenmin 62
 \lefthyphenmin 62
 \linespread{1.2}
+
+% Misc style and font
+\renewcommand{\familydefault}{\sfdefault}
 \frenchspacing
 \pagestyle{fancy}
 \fancyhf{}
@@ -22,23 +35,34 @@
 \renewcommand{\footrulewidth}{0.4pt}
 \definecolor{fuchsia}{HTML}{bd5a9b}
 
+% Proof case environment. Usage:
+% \begin{pcase}
+%     \item <stuff here>
+% \end{pcase}
 \newenvironment{pcase}{
 	\begin{enumerate}[\textbf{Case \arabic*:}, wide=0pt, leftmargin=*]
 }{
 	\end{enumerate}
 }
 
+% Proof sub-case environment. Usage:
+% \begin{psubcase}
+%     \item <stuff here>
+% \end{psubcase}
 \newenvironment{psubcase}{
 	\begin{enumerate}[\textbf{Case \alph*:}, wide=0pt, leftmargin=*]
 }{
 	\end{enumerate}
 }
 
+% In this section the @ symbol is a regular letter, not a special character
 \makeatletter
 
+% Header text
 \lhead{\course: \@title}
 \rhead{\@author}
 
+% Spacing before and after display-style math (i.e. $$\latex$$ or \[\latex\]
 \g@addto@macro\normalsize{
     \setlength\abovedisplayskip{5pt}
     \setlength\belowdisplayskip{5pt}
@@ -46,12 +70,14 @@
     \setlength\belowdisplayshortskip{2pt}
 }
 
+% First page header and footer (different from other pages)
 \fancypagestyle{firstpage}{
     \fancyhf{}
     \rhead{\@author}
     \fancyfoot[c]{\thx{Page \textbf\thepage}}
 }
 
+% Makes the cases environment look better
 \def\env@cases{
   \let\@ifnextchar\new@ifnextchar
   \left\lbrace
@@ -59,6 +85,7 @@
   \array{l@{\quad}l@{}}
 }
 
+% The bolded title and stuff at the top of the first page
 \def\inserthead{
     \thispagestyle{firstpage}
     \def\ihead{}
@@ -71,4 +98,5 @@
     \textbf{\ihead}
 }
 
+% Turn @ back into a special character (as is the default)
 \makeatother
