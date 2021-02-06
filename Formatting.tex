@@ -17,16 +17,18 @@
 \frenchspacing
 \pagestyle{fancy}
 \fancyhf{}
-\fancyfoot[c]{\thepage}
+\newcommand{\thx}[1]{#1}
+\fancyfoot[c]{\thx{Page \textbf\thepage}}
+\renewcommand{\footrulewidth}{0.4pt}
 \definecolor{fuchsia}{HTML}{bd5a9b}
 
-\newenvironment{pcase}{ 
+\newenvironment{pcase}{
 	\begin{enumerate}[\textbf{Case \arabic*:}, wide=0pt, leftmargin=*]
 }{
 	\end{enumerate}
 }
 
-\newenvironment{psubcase}{ 
+\newenvironment{psubcase}{
 	\begin{enumerate}[\textbf{Case \alph*:}, wide=0pt, leftmargin=*]
 }{
 	\end{enumerate}
@@ -34,22 +36,23 @@
 
 \makeatletter
 
+\lhead{\course: \@title}
+\rhead{\@author}
+
 \g@addto@macro\normalsize{
     \setlength\abovedisplayskip{5pt}
     \setlength\belowdisplayskip{5pt}
     \setlength\abovedisplayshortskip{2pt}
     \setlength\belowdisplayshortskip{2pt}
 }
-\lhead{\course: \@title}
-\rhead{\@author}
 
 \fancypagestyle{firstpage}{
     \fancyhf{}
     \rhead{\@author}
-    \fancyfoot[c]{\thepage}
+    \fancyfoot[c]{\thx{Page \textbf\thepage}}
 }
 
-\def\env@cases{%
+\def\env@cases{
   \let\@ifnextchar\new@ifnextchar
   \left\lbrace
   \def\arraystretch{1.2}
