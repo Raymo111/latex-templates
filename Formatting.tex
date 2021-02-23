@@ -59,8 +59,17 @@
 \makeatletter
 
 % Header text
-\lhead{\course: \@title}
-\rhead{\@author}
+\@ifundefined{course}{}{
+    \g@addto@macro\lhead{\course}
+    \@ifundefined{title}{
+        \g@addto@macro\lhead{\@title}
+    }{
+        \g@addto@macro\lhead{: \@title}
+    }
+}
+\@ifundefined{author}{}{
+    \rhead{\@author}
+}
 
 % Spacing before and after display-style math (i.e. $$\latex$$ or \[\latex\]
 \g@addto@macro\normalsize{
@@ -85,13 +94,32 @@
   \array{l@{\quad}l@{}}
 }
 
-% The bolded title and stuff at the top of the first page
+% The bolded header at the top of the first page
 \def\inserthead{
     \thispagestyle{firstpage}
     \def\ihead{}
-    \@ifundefined{course}{}{\g@addto@macro\ihead{\course: }}
-    \@ifundefined{title}{}{\g@addto@macro\ihead{\@title\\}}
-    \@ifundefined{duetime}{\@ifundefined{duedate}{}{\g@addto@macro\ihead{Due on \duedate}}}{\g@addto@macro\ihead{Due at \duetime\ }\@ifundefined{timezone}{}{\g@addto@macro\ihead{\timezone\ }}\@ifundefined{duedate}{}{\g@addto@macro\ihead{on \duedate}}}
+    \@ifundefined{course}{}{
+        \g@addto@macro\ihead{\course}
+        \@ifundefined{title}{
+            \g@addto@macro\ihead{\@title\\}
+        }{
+            \g@addto@macro\ihead{: \@title}
+        }
+        \g@addto@macro\ihead{\\}
+    }
+    \@ifundefined{duetime}{
+        \@ifundefined{duedate}{}{
+            \g@addto@macro\ihead{Due on \duedate}
+        }
+    }{
+        \g@addto@macro\ihead{Due at \duetime\ }
+        \@ifundefined{timezone}{}{
+            \g@addto@macro\ihead{\timezone\ }
+        }
+        \@ifundefined{duedate}{}{
+            \g@addto@macro\ihead{on \duedate}
+        }
+    }
     \@ifundefined{desc}{}{\g@addto@macro\ihead{\\\desc}}
     \textbf{\ihead}
 }
