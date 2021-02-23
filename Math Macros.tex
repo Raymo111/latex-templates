@@ -8,6 +8,9 @@
 % Necessary packages to import for this file - mathtools imports amsmath
 \usepackage{mathtools, xspace}
 
+% Vector style (mathbf, Vec, etc.)
+\newcommand\customvector{\Vec}
+
 % In the Natural, Real, Integer, Rational, Complex domains, and Field, respectively
 \newcommand\inn{\ensuremath{\in\mathbb{N}}\xspace}
 \newcommand\inr{\ensuremath{\in\mathbb{R}}\xspace}
@@ -41,12 +44,12 @@
 \newcommand\vdot{\ensuremath{\bullet}\xspace}
 
 % u, v, w, z, n and zero vectors, respectively
-\renewcommand\u{\ensuremath{\Vec{u}}\xspace}
-\renewcommand\v{\ensuremath{\Vec{v}}\xspace}
-\newcommand\w{\ensuremath{\Vec{w}}\xspace}
-\newcommand\z{\ensuremath{\Vec{z}}\xspace}
-\newcommand\n{\ensuremath{\Vec{n}}\xspace}
-\newcommand\0{\ensuremath{\Vec{0}}\xspace}
+\renewcommand\u{\ensuremath{\customvector{u}}\xspace}
+\renewcommand\v{\ensuremath{\customvector{v}}\xspace}
+\newcommand\w{\ensuremath{\customvector{w}}\xspace}
+\newcommand\z{\ensuremath{\customvector{z}}\xspace}
+\newcommand\n{\ensuremath{\customvector{n}}\xspace}
+\newcommand\0{\ensuremath{\customvector{0}}\xspace}
 
 % Norm (length), projection, Standard Inner Product and span, respectively
 \newcommand{\norm}[1]{\ensuremath{\left\|#1\right\|}\xspace}

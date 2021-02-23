@@ -91,9 +91,7 @@
     \def\ihead{}
     \@ifundefined{course}{}{\g@addto@macro\ihead{\course: }}
     \@ifundefined{title}{}{\g@addto@macro\ihead{\@title\\}}
-    \@ifundefined{duetime}{}{\g@addto@macro\ihead{Due at \duetime\ }}
-    \@ifundefined{timezone}{}{\g@addto@macro\ihead{\timezone\ }}
-    \@ifundefined{duetime}{}{\g@addto@macro\ihead{on \duedate}}
+    \@ifundefined{duetime}{\@ifundefined{duedate}{}{\g@addto@macro\ihead{Due on \duedate}}}{\g@addto@macro\ihead{Due at \duetime\ }\@ifundefined{timezone}{}{\g@addto@macro\ihead{\timezone\ }}\@ifundefined{duedate}{}{\g@addto@macro\ihead{on \duedate}}}
     \@ifundefined{desc}{}{\g@addto@macro\ihead{\\\desc}}
     \textbf{\ihead}
 }
