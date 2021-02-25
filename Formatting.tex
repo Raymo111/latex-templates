@@ -55,6 +55,14 @@
 	\end{enumerate}
 }
 
+% Augmented matrix: use \begin{amat}{<number of cols in coefficient matrix>}\end{amat}
+% Thanks to http://joshua.smcvt.edu/linearalgebra/
+\newenvironment{amat}[1]{
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{
+  \end{array}\right)
+}
+
 % In this section the @ symbol is a regular letter, not a special character
 \makeatletter
 
