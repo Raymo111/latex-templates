@@ -10,7 +10,7 @@ Overleaf settings:
 - Overall theme: Default (eww to light mode, I wish there was a black mode)
 - Keybindings: None (I'm a vim user but I don't like it in Overleaf)
 - Font Size: 14px (I have a massive monitor)
-- Font Family: Monaco (I wish there was Consolas)
+- Font Family: Monaco/Menlo/Consolas
 - Line Height: Normal
 - PDF Viewer: Built-In
 - Recompile:
