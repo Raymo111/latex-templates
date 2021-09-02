@@ -8,7 +8,7 @@ Overleaf settings:
 - Code check: On
 - Editor theme: monokai (it's the best)
 - Overall theme: Default (eww to light mode, I wish there was a black mode)
-- Keybindings: None (I use nano)
+- Keybindings: None (I'm a vim user but I don't like it in Overleaf)
 - Font Size: 14px (I have a massive monitor)
 - Font Family: Monaco (I wish there was Consolas)
 - Line Height: Normal
