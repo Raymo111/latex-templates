@@ -17,3 +17,5 @@ Overleaf settings:
     - Auto-recompile: On
     - Compile Mode: Normal (I'm scared of using draft and there's not much latency reduction for my usage)
     - Check Syntax: On
+
+Texlive packages requires: mathtools xcolor enumitem ncctools pgf
