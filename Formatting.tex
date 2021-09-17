@@ -6,7 +6,7 @@
 %        other LaTeX files, and use \input{Formatting} before \begin{document}
 
 % Necessary packages to import for this file - math fonts, fancy header/footer and color
-\usepackage{amsfonts,fancyhdr,xcolor}
+\usepackage{amsfonts,fancyhdr,xcolor,forest}
 
 % See https://www.overleaf.com/learn/latex/page_size_and_margins
 \headheight 13.6pt
@@ -61,6 +61,17 @@
   \left(\begin{array}{@{}*{#1}{c}|c@{}}
 }{
   \end{array}\right)
+}
+
+% Forest settings
+\forestset{
+    line numbering=false,
+    single branches=true,
+    default preamble={
+        for tree={
+            minimum width=2cm
+        }
+    }
 }
 
 % In this section the @ symbol is a regular letter, not a special character
