@@ -19,3 +19,13 @@ Overleaf settings:
     - Check Syntax: On
 
 Texlive packages required: mathtools xcolor enumitem ncctools pgf forest
+
+Additional packages required for minted (code with syntax highlighting in latex): minted fvextra fancyvrb upquote lineno catchfile xstring framed float
+
+Additional config for minted for Sharelatex (Overleaf Community Edition):
+```bash
+alias sharelatex='/path/to/overleaf/bin/docker-compose exec sharelatex'
+sharelatex apt update
+sharelatex apt inst python-pygments
+sharelatex sed -ie '$ashell_escape = t' /usr/local/texlive/2021/texmf.cnf
+```
