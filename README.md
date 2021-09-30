@@ -20,7 +20,7 @@ Overleaf settings:
 
 Texlive packages required: mathtools xcolor enumitem ncctools pgf forest
 
-Additional packages required for minted (code with syntax highlighting in latex): minted fvextra fancyvrb upquote lineno catchfile xstring framed float
+Additional packages required for minted (code with syntax highlighting in latex): minted fvextra fancyvrb upquote lineno catchfile xstring framed float relsize
 
 Additional config for minted for Sharelatex (Overleaf Community Edition):
 ```bash
