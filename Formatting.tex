@@ -26,14 +26,20 @@
 \linespread{1.2}
 
 % Misc style and font
-\renewcommand{\familydefault}{\sfdefault} % Comment this line if you want the default serif font
+\renewcommand\familydefault\sfdefault % Comment this line if you want the default serif font
 \frenchspacing
 \pagestyle{fancy}
 \fancyhf{}
-\newcommand{\thx}[1]{#1}
+\newcommand\thx[1]{#1}
 \fancyfoot[c]{\thx{Page \textbf\thepage}}
-\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
 \definecolor{fuchsia}{HTML}{bd5a9b}
+
+% Gray out question
+\newcommand\Q[1]{\textcolor{gray}{#1}}
+
+% Notes for equations
+\newcommand\note[1]{\quad\text{\footnotesize{#1}}}
 
 % Proof case environment. Usage:
 % \begin{pcase}
