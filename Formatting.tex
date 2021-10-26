@@ -5,8 +5,8 @@
 % Usage: Name this file Formatting.tex and place it in the same directory as your
 %        other LaTeX files, and use \input{Formatting} before \begin{document}
 
-% Necessary packages to import for this file - math fonts, fancy header/footer and color
-\usepackage{amsfonts,fancyhdr,xcolor,forest}
+% Necessary packages to import for this file - fancy header/footer and forest
+\usepackage{fancyhdr,forest}
 
 % See https://www.overleaf.com/learn/latex/page_size_and_margins
 \headheight 13.6pt
@@ -80,6 +80,17 @@
     },
     begin draw/.code=\begin{center}\begin{tikzpicture},
     end draw/.code=\end{tikzpicture}\end{center}
+}
+
+% TikZ Circuit
+\tikzset{
+  l/.style={anchor=east},
+  r/.style={anchor=west},
+  t/.style={above right,xshift=-10pt},
+  b/.style={below right,xshift=-10pt},
+  and/.style={and port},
+  or/.style={or port},
+  not/.style={not port},
 }
 
 % In this section the @ symbol is a regular letter, not a special character
