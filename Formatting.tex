@@ -35,6 +35,13 @@
 \renewcommand\footrulewidth{0.4pt}
 \definecolor{fuchsia}{HTML}{bd5a9b}
 
+% Enumeration for questions and lists
+\newlist{qn}{enumerate}{2}
+\setlist[qn, 1]{(a),topsep=0pt}
+\setlist[qn, 2]{i.,topsep=0pt}
+\newlist{lst}{enumerate}{10}
+\setlist[lst]{1.,nosep,topsep=0pt}
+
 % Gray out question
 \newcommand\Q[1]{\textcolor{gray}{#1}}
 

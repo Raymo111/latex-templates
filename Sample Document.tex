@@ -1,7 +1,7 @@
-\documentclass[11pt]{article}
-\usepackage{amsmath,amssymb,nccmath,mathtools,amsthm}
+\documentclass[12pt]{article}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[shortlabels]{enumitem}
+\usepackage{amsmath,amssymb,nccmath,mathtools,amsthm}
 
 \author{Yourname}
 \def\course{Coursename Term YYYY}
@@ -22,10 +22,10 @@
 
 \inserthead
 
-\textbf{Q01.}
+\textbf{Q1}
 
-\begin{enumerate}
-    \item \begin{enumerate}[(a), topsep=0pt]
+\begin{qn}
+    \item \begin{qn}
             \item $\u = \ve{11, 2, x}$
                     $$\v = \ve{((, 2, x}$$
                     \[
@@ -37,19 +37,29 @@
                     1 & 1 & 1
                 \end{amat}
             \]
-        \end{enumerate}
-\end{enumerate}
+            \item a \teq b $c \teq d$
+            \[
+                e \teq f
+            \]
+        \end{qn}
+\end{qn}
 
 \newpage
 
-\textbf{Q02.}
+\textbf{Q2}
 
 \begin{enumerate}[(a)]
-    \item \begin{proof}
-            \begin{pcase}
-                \item By Raymond Li (Raymo111)
-            \end{pcase}
-        \end{proof}
+    \item \begin{proof}\,
+        \begin{lst}
+            \item point 1
+            \item point 2
+            \item point 3
+        \end{lst}
+        \begin{pcase}
+            \item Original work by Raymond Li (Raymo111)
+            \item Credited (chunks of code) and uncredited (lines of code) from tex.stackexchange
+        \end{pcase}
+    \end{proof}
 \end{enumerate}
 
 \end{document}
