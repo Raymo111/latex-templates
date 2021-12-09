@@ -1,0 +1,16 @@
+% R code for LaTeX
+% Author: Raymond Li <latex@raymond.li>
+% License: Creative Commons Attribution 4.0 International
+% GitHub repository: (https://github.com/Raymo111/latex-templates)
+% Usage: Name this file R code.tex and place it in the same directory as your
+%        other LaTeX files, and use \input{R code} before \begin{document}
+
+% Minted opts
+\usemintedstyle{tango}
+\definecolor{bg}{HTML}{f8f8f8}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Var}{\operatorname{Var}}
+% \setminted{bgcolor=bg}
+\BeforeBeginEnvironment{rcode}{\vspace{-1ex}}
+\newminted{r}{autogobble, fontsize=\small}
+\newminted[qcode]{r}{autogobble, style=bw, fontsize=\scriptsize}

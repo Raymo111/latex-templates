@@ -1,0 +1,37 @@
+% Logic Macros for LaTeX
+% Author: Raymond Li <latex@raymond.li>
+% License: Creative Commons Attribution 4.0 International
+% GitHub repository: (https://github.com/Raymo111/latex-templates)
+% Usage: Name this file Logic Macros.tex and place it in the same directory as your
+%        other LaTeX files, and use \input{Logic Macros} before \begin{document}
+
+\usepackage{stmaryrd}
+
+% Form(L^p)
+\newcommand\formlp{\ensuremath{\mathit{Form}(\mathcal{L}^{\mathit{p}})}\xspace}
+
+% Connectives
+\renewcommand{\~}{\lnot}
+\newcommand{\4}{\forall}
+\newcommand{\3}{\exists}
+\renewcommand{\t}{\text{true}}
+
+% Implication
+\renewcommand\implies{\ensuremath{\rightarrow}\xspace}
+\renewcommand\iff{\ensuremath{\leftrightarrow}\xspace}
+
+% Tautological implication, equivalence, formal deduction
+\newcommand\timplies{\ensuremath{\vDash}\xspace}
+% \newcommand\teq{|\!\!\!=\!\!\!|\,}
+\newcommand\teq{\ensuremath{\models\!\mid}\xspace}
+\renewcommand{\>}{&\timplies}
+\newcommand{\+}{&\vdash}
+\newcommand{\E}[1]{&&\Sigma = \{\text{#1}\}}
+\newcommand{\PAt}{\emptyset \+_{PA}}
+\newcommand{\PAi}{\+_{PA}}
+\renewcommand{\ne}[1]{[#1 \text{ not elsewhere}]}
+
+% Formal Verification
+% Hoare conditional
+\newcommand{\HC}[1]{\ensuremath{\llparenthesis #1 \rrparenthesis}\xspace}
+\newcommand{\T}{\hspace*{2em}}
