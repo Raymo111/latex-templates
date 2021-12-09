@@ -37,8 +37,8 @@
 
 % Enumeration for questions and lists
 \newlist{qn}{enumerate}{2}
-\setlist[qn, 1]{(a),topsep=0pt}
-\setlist[qn, 2]{i.,topsep=0pt}
+\setlist[qn, 1]{(a),topsep=0pt,leftmargin=*}
+\setlist[qn, 2]{i.,topsep=0pt,leftmargin=*}
 \newlist{lst}{enumerate}{10}
 \setlist[lst]{1.,nosep,topsep=0pt}
 
@@ -103,15 +103,21 @@
 % In this section the @ symbol is a regular letter, not a special character
 \makeatletter
 
+% Left and right equation numbering switch
+\newcommand{\setleqno}{\tagsleft@true}
+\newcommand{\setreqno}{\tagsleft@false}
+
 % Header text
 \@ifundefined{course}{}{
-    \g@addto@macro\lhead{\course}
+    \def\jhead{}
+    \g@addto@macro\jhead{\course}
     \@ifundefined{title}{
-        \g@addto@macro\lhead{\@title}
+        \g@addto@macro\jhead{\@title}
     }{
-        \g@addto@macro\lhead{: \@title}
+        \g@addto@macro\jhead{: \@title}
     }
 }
+\lhead{\jhead}
 \@ifundefined{author}{}{
     \rhead{\@author}
 }
