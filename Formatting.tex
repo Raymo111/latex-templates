@@ -26,6 +26,8 @@
 \linespread{1.2}
 
 % Misc style and font
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \renewcommand\familydefault\sfdefault % Comment this line if you want the default serif font
 \frenchspacing
 \pagestyle{fancy}
@@ -53,7 +55,7 @@
 %     \item <stuff here>
 % \end{pcase}
 \newenvironment{pcase}{
-	\begin{enumerate}[\textbf{Case \arabic*:}, wide=0pt, leftmargin=*]
+	\begin{enumerate}[\textbf{Case \arabic*:}, wide=0pt, leftmargin=*, topsep=0pt]
 }{
 	\end{enumerate}
 }
@@ -116,6 +118,7 @@
     }{
         \g@addto@macro\jhead{: \@title}
     }
+    \lhead{\jhead}
 }
 \lhead{\jhead}
 \@ifundefined{author}{}{
