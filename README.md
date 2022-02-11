@@ -18,7 +18,7 @@ Overleaf settings:
     - Compile Mode: Normal (I'm scared of using draft and there's not much latency reduction for my usage)
     - Check Syntax: On
 
-Texlive packages required: mathtools xcolor enumitem ncctools pgf forest
+Texlive packages required: mathtools xcolor enumitem ncctools pgf forest cancel circuitikz csquotes multirow siunitx stmaryrd tkz-berge tkz-graph was xkeyval xpatch
 
 Additional packages required for minted (code with syntax highlighting in latex): minted fvextra fancyvrb upquote lineno catchfile xstring framed float relsize
 
