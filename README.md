@@ -26,6 +26,6 @@ Additional config for minted for Sharelatex (Overleaf Community Edition):
 ```bash
 alias sharelatex='/path/to/overleaf/bin/docker-compose exec sharelatex'
 sharelatex apt update
-sharelatex apt inst python-pygments
+sharelatex apt install python-pygments
 sharelatex sed -ie '$ashell_escape = t' /usr/local/texlive/2021/texmf.cnf
 ```
