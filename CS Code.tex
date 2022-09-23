@@ -1,0 +1,13 @@
+% CS code for LaTeX
+% Author: Raymond Li <latex@raymond.li>
+% License: Creative Commons Attribution 4.0 International
+% GitHub repository: (https://github.com/Raymo111/latex-templates)
+% Usage: Name this file cS code.tex and place it in the same directory as your
+%        other LaTeX files, and use \input{CS code} before \begin{document}
+
+% Minted opts
+\definecolor{bg}{HTML}{f8f8f8}
+% \setminted{bgcolor=bg}
+\BeforeBeginEnvironment{qcode}{\vspace{-1ex}}
+\newminted[qcode]{sh}{autogobble, style=bw, fontsize=\scriptsize, linenos}
+\newminted[ccode]{sh}{autogobble, linenos}
